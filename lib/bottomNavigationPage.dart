@@ -34,7 +34,7 @@ class _BottomNavigationPageState extends State<BottomNavigationPage> {
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
-
+        
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: SizedBox(child: Image.asset('icons/home.png'),height: 24,width: 24,),

@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:rentmything/constants/constants.dart';
+import 'package:rentmything/views/favourite/favourite.dart';
 import 'package:rentmything/views/home/rentout1.dart';
 import 'package:rentmything/views/productdetails.dart';
 
@@ -78,7 +79,7 @@ class _HomeViewState extends State<HomeView> {
                 padding: const EdgeInsets.all(15.0),
                 child: Column(
                   children: [
-                    const Padding(
+                   Padding(
                       padding: EdgeInsets.all(8.0),
                       child: Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -91,7 +92,16 @@ class _HomeViewState extends State<HomeView> {
                                 fontWeight: FontWeight.w400,
                                 fontSize: 16),
                           ),
-                          SizedBox(child: Image(image: AssetImage('icons/notification.png'),height: 24,width: 24,),)
+                          Row(
+                            children: [
+                              SizedBox(child: Image(image: AssetImage('assets/icons/notification.png'),height: 24,width: 24,),),
+                              SizedBox(width: 10,),
+                               InkWell(onTap: () {
+                                 Navigator.push(context, MaterialPageRoute(builder: (context)=>FavouritePage()));
+                               },
+                               child: SizedBox(child: Image(image: AssetImage('assets/icons/favourite.png'),height: 24,width: 24,),),)
+                            ],
+                          ),
                         ],
                       ),
                     ),
@@ -158,7 +168,7 @@ class _HomeViewState extends State<HomeView> {
                               width: 100,
                               child: Column(
                                 children: [
-                                  Image(image: AssetImage('icons/car.png'),height: 24,width: 24,),
+                                  Image(image: AssetImage('assets/icons/car.png'),height: 24,width: 24,),
                                   Text(
                                     'Vehicles',
                                     style: TextStyle(
@@ -172,7 +182,7 @@ class _HomeViewState extends State<HomeView> {
                               width: 100,
                               child: Column(
                                 children: [
-                                  Image(image: AssetImage('icons/electronics.png'),height: 24,width: 24,),
+                                  Image(image: AssetImage('assets/icons/electronics.png'),height: 24,width: 24,),
                                   Text(
                                     'Electronics',
                                     style: TextStyle(
@@ -186,7 +196,7 @@ class _HomeViewState extends State<HomeView> {
                               width: 100,
                               child: Column(
                                 children: [
-                                  Image(image: AssetImage('icons/machinary.png'),height: 24,width: 24,),
+                                  Image(image: AssetImage('assets/icons/machinary.png'),height: 24,width: 24,),
                                   Text(
                                     'Machineries',
                                     style: TextStyle(
@@ -200,7 +210,7 @@ class _HomeViewState extends State<HomeView> {
                               width: 100,
                               child: Column(
                                 children: [
-                                  Image(image: AssetImage('icons/tools.png'),height:24,width: 24,),
+                                  Image(image: AssetImage('assets/icons/tools.png'),height:24,width: 24,),
                                   Text(
                                     'Tools',
                                     style: TextStyle(
@@ -234,32 +244,12 @@ class _HomeViewState extends State<HomeView> {
                 ),
               ),
             ),
-            // Padding(
-            //   padding: const EdgeInsets.all(8.0),
-            //   child: Row(
-            //     mainAxisAlignment:MainAxisAlignment.spaceAround,
-            //     children: [
-            //       Container(
-            //         height: 100,
-            //         width: MediaQuery.of(context).size.width/1.1,
-            //         decoration: BoxDecoration(
-            //           borderRadius: BorderRadius.circular(15),
-            //           color: Colors.grey,
-            //           image: DecorationImage(
-            //             image: AssetImage('assets/images/van.jpg'),
-            //             fit: BoxFit.cover
-            //           )
-            //         ),
-            //         child: Center(child: Text('Main Ads',style: TextStyle(fontWeight: FontWeight.bold,color: Colors.black),)),
-            //       ),
-            //     ],
-            //   ),
-            // ),
+          
             const SizedBox(
-              height: 10,
+              height: 20,
             ),
             SizedBox(
-              height: 130,
+              height: 120,
               width: MediaQuery.of(context).size.width,
               child: CarouselSlider(
                   items: images.map((imagePath) {
@@ -308,8 +298,10 @@ class _HomeViewState extends State<HomeView> {
                         });
                       })),
             ),
+
+            //neeed scrooooooooooooool
             const Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: EdgeInsets.only(left:10,right: 10),
               child: Text(
                 'My Rentals',
                 style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
@@ -354,7 +346,7 @@ class _HomeViewState extends State<HomeView> {
                                     child: Text(
                                       'Honda Amaze',
                                       style: TextStyle(
-                                          fontWeight: FontWeight.w500,
+                                          fontWeight: FontWeight.w700,
                                           fontSize: 12),
                                     ),
                                   ),
@@ -414,80 +406,9 @@ class _HomeViewState extends State<HomeView> {
               padding: EdgeInsets.all(8.0),
               child: Text(
                 'Popular',
-                style: TextStyle(fontWeight: FontWeight.w500, fontSize: 16),
+                style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
               ),
             ),
-            // Expanded(
-            //   child:
-            //       SingleChildScrollView(
-            //         child: ListView.builder(
-            //           itemCount: 5,
-            //           shrinkWrap: true,
-            //           itemBuilder: (context,index) {
-            //             return Padding(
-            //               padding: const EdgeInsets.only(left:25.0,right: 25,top: 8,bottom: 8),
-            //               child: Container(
-            //                 decoration: BoxDecoration(
-            //                   color: Colors.white,
-            //                   borderRadius: BorderRadius.circular(15),
-            //                   boxShadow: [
-            //                     BoxShadow(
-            //                       blurRadius: 2,
-            //                       offset: Offset(2,2),
-            //                       color: Colors.blue.shade100
-            //                     )
-            //                   ]
-            //                 ),
-            //                 child: Padding(
-            //                   padding: const EdgeInsets.all(2.0),
-            //                   child: ListTile(
-            //                     leading: Container(
-            //                       height: 200,
-            //                       width: 70,
-            //                       decoration: BoxDecoration(
-            //                         borderRadius: BorderRadius.circular(10),
-            //                         color: Colors.black,
-            //                       ),
-            //                     ),
-            //                     title: Row(
-            //                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //                       children: [
-            //                         Row(
-            //                           children: [
-            //                             Text('₹ 3,300',style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500,),),
-            //                             SizedBox(width: 20,),
-            //                             Container(
-            //                               decoration: BoxDecoration(
-            //                                 color: color3,
-            //                                 borderRadius: BorderRadius.circular(15),
-            //                               ),
-            //                               child: Padding(
-            //                                 padding: const EdgeInsets.only(left:10.0,right: 10.0),
-            //                                 child: Text('Daily',style: TextStyle(fontSize: 10,fontWeight:FontWeight.w700, color:Colors.grey),),
-            //                               ),
-            //                             ),
-            //                           ],
-            //                         ),
-            //                         Icon(Icons.favorite,color: Colors.pink,)
-            //                       ],
-            //                     ),
-            //                     subtitle: Column(
-            //                       crossAxisAlignment: CrossAxisAlignment.start,
-            //                       children: [
-            //                       Text('Van for rent 2018 model'),
-            //                       Row(children: [
-            //                         Icon(Icons.location_on,color: color1,),
-            //                         Text('kozhikode, West hill')
-            //                       ],)
-            //                     ]),
-            //                   ),
-            //                 ),
-            //               ),
-            //             );
-            //           }
-            //         ),
-            //       ),
-            // )
         
             Center(
               child: InkWell(
@@ -547,9 +468,10 @@ class _HomeViewState extends State<HomeView> {
                                         'Daily',
                                         style: TextStyle(
                                             fontWeight: FontWeight.w700,
+                                            fontSize: 10,
                                             color:
                                                 Color.fromRGBO(255, 255, 255, 0.66),
-                                            letterSpacing: 2),
+                                            letterSpacing: 1.6),
                                       ),
                                     ),
                                   ),
@@ -607,7 +529,7 @@ class _HomeViewState extends State<HomeView> {
                             color: Colors.black,
                             borderRadius: BorderRadius.circular(15),
                             image: DecorationImage(
-                                image: AssetImage('images/bluecar.jpg',),
+                                image: AssetImage('assets/images/bluecar.jpg',),
                                 fit: BoxFit.cover)),
                       ),),
                       SizedBox(
@@ -641,9 +563,10 @@ class _HomeViewState extends State<HomeView> {
                                       'Monthly',
                                       style: TextStyle(
                                           fontWeight: FontWeight.w700,
+                                          fontSize: 10,
                                           color:
                                               Color.fromRGBO(255, 255, 255, 0.66),
-                                          letterSpacing: 2),
+                                          letterSpacing: 1.6),
                                     ),
                                   ),
                                 ),
@@ -700,7 +623,7 @@ class _HomeViewState extends State<HomeView> {
                             color: Colors.black,
                             borderRadius: BorderRadius.circular(15),
                             image: DecorationImage(
-                                image: AssetImage('images/redcar.jpg'),
+                                image: AssetImage('assets/images/redcar.jpg'),
                                 fit: BoxFit.cover)),
                       ),),
                       SizedBox(
@@ -734,9 +657,10 @@ class _HomeViewState extends State<HomeView> {
                                       'Hourly',
                                       style: TextStyle(
                                           fontWeight: FontWeight.w700,
+                                          fontSize: 10,
                                           color:
                                               Color.fromRGBO(255, 255, 255, 0.66),
-                                          letterSpacing: 2),
+                                          letterSpacing: 1.6),
                                     ),
                                   ),
                                 ),
