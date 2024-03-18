@@ -15,6 +15,11 @@ class _RentOut2State extends State<RentOut2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: InkWell(onTap: (){
+          Navigator.pop(context);
+        },child: Icon(Icons.arrow_circle_left,color: color1,)),
+      ),
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.all(10.0),

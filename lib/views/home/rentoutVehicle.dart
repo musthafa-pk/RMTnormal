@@ -14,6 +14,13 @@ class _RentOutVehicleState extends State<RentOutVehicle> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: InkWell(
+          onTap: (){
+            Navigator.pop(context);
+          },
+          child: Icon(Icons.arrow_circle_left_rounded,color: color1,)),
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(

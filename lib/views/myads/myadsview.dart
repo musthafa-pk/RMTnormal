@@ -4,8 +4,6 @@ import 'package:rentmything/constants/constants.dart';
 import 'package:rentmything/views/myads/ongoingads.dart';
 import 'package:rentmything/views/myads/renteditems.dart';
 
-import '../productdetails.dart';
-
 class MyAdsView extends StatefulWidget {
   const MyAdsView({super.key});
 

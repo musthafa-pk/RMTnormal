@@ -1,4 +1,8 @@
+import 'dart:typed_data';
+
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter_share/flutter_share.dart';  
 import 'package:rentmything/constants/constants.dart';
 
 class ProductDetails extends StatefulWidget {
@@ -9,6 +13,36 @@ class ProductDetails extends StatefulWidget {
 }
 
 class _ProductDetailsState extends State<ProductDetails> {
+
+   void _shareProductDetails() async {
+    try {
+      // Define the text content to share
+      String productDetails = '''
+      HYUNDAI NEW I20 2023
+      Brand: Hyundai
+      Price: ₹3400 per day
+      Location: Kozhikode, Vadakara
+      Musthafa
+      Posted On: 1-3-2024
+      Description:
+      - Parking Sensors: Yes
+      - Power Steering: Yes
+      - Power Windows: Front & rear
+      - AM/FM Radio: Yes
+      - Rear parking Camera: Yes
+      ''';
+
+      // Share the product details
+      await FlutterShare.share(
+        title: 'Product Details',
+        text: productDetails,
+      );
+    } catch (e) {
+      print('Error sharing: $e');
+      // Handle errors here
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -67,8 +101,13 @@ class _ProductDetailsState extends State<ProductDetails> {
           FloatingActionButtonLocation.centerFloat,
       appBar: AppBar(
         actions: [
-          Icon(
-            Icons.share,
+          InkWell(
+            onTap: (){
+              _shareProductDetails();
+            },
+            child: Icon(
+              Icons.share,
+            ),
           ),
           Icon(Icons.favorite)
         ],

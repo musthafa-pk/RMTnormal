@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rentmything/bottomNavigationPage.dart';
 import 'package:rentmything/constants/constants.dart';
+import 'package:rentmything/views/auth/login.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Poppins',
         backgroundColor: Colors.white,
       ),
-      home: BottomNavigationPage()
+      home: LoginPage()
     );
   }
 }
