@@ -109,6 +109,7 @@ class _ChatPageState extends State<ChatPage> {
                 padding: const EdgeInsets.all(8.0),
                 child: Column(
                   children: [
+                    
                     buildMessage(isSentByMe: true, message: 'Hey'),
                     buildMessage(isSentByMe: false, message: 'Hellooooooooooo'),
                     buildMessage(isSentByMe: true, message: 'hey, is it available?'),

@@ -48,7 +48,7 @@ class _ProductDetailsState extends State<ProductDetails> {
     return Scaffold(
       floatingActionButton: InkWell(
         onTap: () {
-        
+          
         },
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,

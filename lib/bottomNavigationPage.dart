@@ -4,7 +4,7 @@ import 'package:rentmything/views/cart/cartview.dart';
 import 'package:rentmything/views/chat/chatview.dart';
 import 'package:rentmything/views/home/homeview.dart';
 import 'package:rentmything/views/myads/myadsview.dart';
-import 'package:rentmything/views/profileview.dart';
+import 'package:rentmything/views/profile/profileview.dart';
 
 class BottomNavigationPage extends StatefulWidget {
   @override

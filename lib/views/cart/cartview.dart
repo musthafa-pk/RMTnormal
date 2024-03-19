@@ -15,7 +15,7 @@ class _CartviewState extends State<Cartview> {
 
   final _cartTabPages = <Widget>[
     RentedItems(), 
-    FinishedAds() 
+    FinishedAds(),
   ];
 
   final _cartTabs = <Tab>[

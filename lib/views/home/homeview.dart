@@ -164,6 +164,7 @@ class _HomeViewState extends State<HomeView> {
                       child: SingleChildScrollView(
                         scrollDirection: Axis.horizontal,
                         child: Row(children: [
+                        
                           SizedBox(
                               width: 100,
                               child: Column(
